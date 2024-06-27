@@ -2,8 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\LevelModel;
 use Illuminate\Database\Eloquent\Model;
+use Tymon\JWTAuth\Contracts\JWTSubject;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+class UserModel extends Authenticatable implements JWTSubject
 
 class UserModel extends Model
 {
@@ -15,7 +20,7 @@ class UserModel extends Model
     public function getJMTIdentifier(){
         return $this ->getKey();
     }
-    public function getJMTCustomClaims(){
+    public function getJWTCustomClaims(){
         return [];
     }
     /**
