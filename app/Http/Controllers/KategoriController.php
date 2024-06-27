@@ -45,6 +45,7 @@ class KategoriController extends Controller
 
         return redirect('/kategori');
     }
+    
     public function update($id)
     {
         $kategori = KategoriModel::find($id);
