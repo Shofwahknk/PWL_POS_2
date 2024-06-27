@@ -12,6 +12,12 @@ class UserModel extends Model
     protected $table = 'm_user'; // Mendefinisikan nama tabel yang digunakan oleh model ini
     protected $primaryKey = 'user_id'; // Mendefinisikan primary key dari tabel yang digunakan
 
+    public function getJMTIdentifier(){
+        return $this ->getKey();
+    }
+    public function getJMTCustomClaims(){
+        return [];
+    }
     /**
      * The attributes that are mass assignable.
      * 
